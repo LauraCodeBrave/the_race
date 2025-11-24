@@ -1,0 +1,88 @@
+/* --- Page layout --- */
+body {
+  background-color: #87ceeb; /* sky blue */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* make the body fill the full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* pushes the track to the bottom */
+}
+
+/* --- Track --- */
+.track {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(#555, #333); /* dark road color */
+  border-top: 10px solid white; /* road stripes */
+  border-bottom: 10px solid white;
+}
+
+/* --- Finish Line --- */
+.finish-line {
+  position: absolute;
+  right: 0;
+  width: 15px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    white 0,
+    white 10px,
+    black 10px,
+    black 20px
+  );
+}
+
+/* --- Racers --- */
+.racer {
+  position: absolute;
+  width: 200px;
+  height: 150px;
+}
+.cloud1{
+  position: absolute;
+  margin-bottom: 300px;
+  height:300px;
+  animation: cloud1 25s alternate infinite;
+}
+.cloud2{
+  position: absolute;
+  margin-bottom: 500px;
+  height:200px;
+  animation: cloud2 20s alternate infinite;
+}
+.racer1 {
+  bottom: 160px; /* top lane */
+  animation: race1 5s linear infinite;
+}
+
+.racer2 {
+  bottom: 40px; /* bottom lane */
+  animation: race2 6s linear infinite;
+}
+
+/* --- Race animations --- */
+@keyframes cloud1{
+   0%{ left: 0;}
+   100%{ left:80%;}
+}
+@keyframes cloud2{
+   0%{ right: 0;}
+   100%{ right:90%;}
+}
+@keyframes race1 {
+  0% { left: 0; }
+  100% { left: 100%; }
+}
+
+@keyframes race2 {
+  0% { left: 0; }
+  100% { left: 100%; }
+}
+
+/* --- Jump effect --- */
+@keyframes jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
